@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "celltagweb"
+version = "0.1.0"
+description = "Streamlit app for image tagging with Redis"
+authors = ["joacocibeira <Cibeira.joaquin@gmail.com>"]
+readme = "README.md"
+packages = [{include = "app"}]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+streamlit = "^1.45.1"
+redis = "^6.2.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+
+[tool.poetry.scripts]
+create-user = "scripts.create_user:main"
+flush = "scripts.flush_redis_to_files:main"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

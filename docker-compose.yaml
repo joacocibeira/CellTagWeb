@@ -1,0 +1,26 @@
+services:
+  app:
+    build: .
+    container_name: streamlit-image-tagger
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./data/images:/data/images        # Host folder with your image files
+      - ./data/auth:/data/auth            # Folder to persist the SQLite user DB
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+      - ./config/redis.conf:/usr/local/etc/redis/redis.conf:ro
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+
+volumes:
+  redis_data:
