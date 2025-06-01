@@ -2,13 +2,6 @@
 
 A responsive Streamlit web app for tagging biological images with custom labels.
 
-- ✅ User authentication (SQLite)
-- ✅ Fast classification via dropdown or buttons
-- ✅ Image rotation using Redis (only untagged images shown)
-- ✅ Per-user tagging history stored as JSON
-- ✅ Fully Dockerized with Redis & volume persistence
-
-
 ## 🚀 Installation & Setup
 
 ### 1. Clone the repo
