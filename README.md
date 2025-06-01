@@ -30,7 +30,8 @@ cp .env.template .env
 mkdir -p data/images
 mkdir -p data/auth
 ```
-This folder will contain the images and output
+This folder will contain the images and output, move the images you want to classify inside the images folder.
+
 
 ### 4. Create users
 
